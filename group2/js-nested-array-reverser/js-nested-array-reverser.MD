@@ -1,10 +1,10 @@
 # Nested Array Reverser
 
 ## Instructions
-Write a function nestedArrayReverser(words) that takes a 2D array of words, reverses the order of the inner arrays, reverses the order of words within each inner array, and returns a single string with all the words joined by a space.
+Write a `function nestedArrayReverser(words)` that takes a 2D array of words, reverses the order of the inner arrays, reverses the order of words within each inner array, and returns a single string with all the words joined by a space.
 
 ## Expected function
-`nestedArrayReverser(words);`
+`function nestedArrayReverser(words){}`
 
 ## Usage
 Here is a possible program to test your function:

@@ -1,10 +1,16 @@
 export function tester(tests){
     tests.forEach((testFn, i) => {
         try {
+            const fnSource = testFn.toString();
             testFn({
-                eq: (a, b) => {
+                eq: (a, b = "") => {
                     const passed = JSON.stringify(a) === JSON.stringify(b);
-                    if (!passed) throw new Error(`Expected ${b}, got ${a}`);
+                    if (!passed) {
+                        throw new Error(`
+    case:     ${fnSource}
+    expected: ${JSON.stringify(b)}
+    actual:   ${JSON.stringify(a)}`);
+                    }
                     return true;
                 }
             });

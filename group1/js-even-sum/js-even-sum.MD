@@ -3,7 +3,7 @@
 Write a function that takes an integer n and returns the sum of all even numbers from 0 to n .
 
 ## Expected function
-`function evenSum(nums) {}``
+`function evenSum(nums) {}`
 
 ## Usage
 Here is a possible program to test your function:

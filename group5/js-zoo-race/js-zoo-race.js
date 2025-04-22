@@ -1,5 +1,6 @@
 
-export async function animal(
+// both pass tests without async
+export function animal(
     name,
     maxSpeed,
     maxSpeedRange,

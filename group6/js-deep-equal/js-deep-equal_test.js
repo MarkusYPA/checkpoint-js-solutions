@@ -17,11 +17,11 @@ const throwsError = (fn) => {
 };
 
 // **Test: Throws Error for Non-Objects**
-// t(({ eq }) => eq(throwsError(() => deepEqual(42, 42)), true));
-// t(({ eq }) => eq(throwsError(() => deepEqual("hello", "hello")), true));
-// t(({ eq }) => eq(throwsError(() => deepEqual(null, null)), true));
-// t(({ eq }) => eq(throwsError(() => deepEqual(undefined, undefined)), true));
-// t(({ eq }) => eq(throwsError(() => deepEqual([], [])), true)); // Arrays not allowed
+t(({ eq }) => eq(throwsError(() => deepEqual(42, 42)), true));
+t(({ eq }) => eq(throwsError(() => deepEqual("hello", "hello")), true));
+t(({ eq }) => eq(throwsError(() => deepEqual(null, null)), true));
+t(({ eq }) => eq(throwsError(() => deepEqual(undefined, undefined)), true));
+t(({ eq }) => eq(throwsError(() => deepEqual([], [])), true)); // Arrays not allowed
 
 // **Test: Simple Objects**
 t(({ eq }) => {

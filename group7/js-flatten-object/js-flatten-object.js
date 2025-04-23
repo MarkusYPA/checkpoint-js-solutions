@@ -1,11 +1,10 @@
 
-export function flattenObject(obj) {
-    const flatObj = {};
+export function flattenObject(obj) {    
 
     // Define two functions inside here: one for flattening arrays, the other for flattening objects
     // Each can call the other or itself
-    // Both modify the flatObj -object that will be returned
-    // All test cases are run with an object -> start with object flattening
+    // Both add properties to the flatObj -object that will be returned
+    // All test cases are run with an object so start with object flattening
 
     const flatArr = (arr, path) => {
         arr.forEach((ele, i) => {
@@ -53,6 +52,7 @@ export function flattenObject(obj) {
         }
     }
 
+    const flatObj = {};
     flatten(obj);
     return flatObj;
 }

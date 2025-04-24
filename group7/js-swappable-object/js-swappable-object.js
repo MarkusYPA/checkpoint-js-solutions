@@ -4,12 +4,10 @@ export function swappableObject(obj) {
     // handler intercepts attempts at accessing properties (get)
     const handler = {
         get(obj, prop) {
-
             // look for matches in values
             for (const [k, v] of Object.entries(obj)) {
                 if (v === prop) return k;
             }
-
             // normal behavior
             return obj[prop]
         },

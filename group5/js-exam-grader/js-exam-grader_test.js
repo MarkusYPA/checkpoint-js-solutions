@@ -42,8 +42,8 @@ t(async ({ eq }) => {
 
 t(async ({ eq }) => {
   const exercises = [
-    async() => {await sleep(1000); return Promise.resolve({ note: 103 })},
-    async() => {await sleep(1000); return Promise.resolve({ note: 153 })},
+    async() => {await sleep(1000); return Promise.resolve({ note: 10 })},
+    async() => {await sleep(1000); return Promise.resolve({ note: 15 })},
   ];
   const result = await examGrader(2000, exercises);
   return eq(result, 10); // Only the first exercise completes within the timeout

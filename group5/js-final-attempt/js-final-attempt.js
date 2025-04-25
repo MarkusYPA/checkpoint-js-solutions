@@ -4,7 +4,7 @@ export function FinalAttempt(callback, count) {
 
     // there's an await, so async. Remeber: ...args for an undefined number of them
     // works with arrow or not
-    //return async (...args) => {
+    // return async (...args) => {
     return async function (...args) {
         let tries = 0;
 
@@ -19,6 +19,6 @@ export function FinalAttempt(callback, count) {
                     return "Final Attempt Fail";
                 }
             }
-        }
+        }s
     }
 }

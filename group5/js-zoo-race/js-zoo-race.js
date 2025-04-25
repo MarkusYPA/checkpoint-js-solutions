@@ -18,9 +18,7 @@ export function animal(
         time = maxSpeedRange / maxSpeed + midSpeedRange / midSpeed + (distance - maxSpeedRange - midSpeedRange) / speed;
     }
 
-    return new Promise((res) => {
-        setTimeout(() => res(name), time)    // arrow function inside timeout
-    })
+    return new Promise((res) => setTimeout(() => res(name), time))     // arrow function inside timeout
 }
 
 export function zooRace(animals) {

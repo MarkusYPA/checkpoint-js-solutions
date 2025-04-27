@@ -20,3 +20,5 @@ export function deepFind(obj, path) {
 
     return thisLevel;
 }
+
+// remember: Object.keys(thisLevel).includes(step)

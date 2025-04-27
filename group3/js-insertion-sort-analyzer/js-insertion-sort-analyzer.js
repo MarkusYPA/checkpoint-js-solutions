@@ -22,3 +22,6 @@ export function insertionSortAnalyzer(arr, comparator) {
         swaps: swaps
     }
 }
+
+// remember: middle clause in inner if statement is where comparator is examined (negative or 0 is ok)
+// iterations incremented in two places

@@ -1,7 +1,7 @@
 export function flattenAndMap(obj, mapper) {
   const flattened = {};
-  let originalKeysCount = 0;
-  let transformedKeysCount = 0;
+  //let originalKeysCount = 0;
+  //let transformedKeysCount = 0;
 
   function recurse(current, path) {
 
@@ -9,10 +9,12 @@ export function flattenAndMap(obj, mapper) {
       const newPath = path ? `${path}.${key}` : key;
 
       if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+
         // Continue flattening for nested objects
         recurse(value, newPath);
+
       } else {
-        originalKeysCount++;
+        //originalKeysCount++;
 
         let mappedValue;
         if (Array.isArray(value)) {
@@ -23,17 +25,21 @@ export function flattenAndMap(obj, mapper) {
         }
 
         flattened[newPath] = mappedValue;
-        transformedKeysCount++;
+        //transformedKeysCount++;
       }
     }
-    
+
   }
 
   recurse(obj, '');
 
   return {
-    flattened,
-    originalKeysCount,
-    transformedKeysCount,
+    flattened: flattened,
+    //originalKeysCount,
+    //transformedKeysCount,
+    originalKeysCount: Object.keys(flattened).length,
+    transformedKeysCount: Object.keys(flattened).length
   };
 }
+
+// Evidently originalKeysCount and transformedKeysCount are always equal and the number of keys in the result?

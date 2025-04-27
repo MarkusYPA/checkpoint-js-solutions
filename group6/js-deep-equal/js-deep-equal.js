@@ -34,6 +34,7 @@ function checkEqual(o1, o2) {
             // array
             if (Array.isArray(v)) {
                 if (!checkArray(v, o2[k])) return false;
+                continue;
             }
 
             // self - o2.self has to be o1, not o2!

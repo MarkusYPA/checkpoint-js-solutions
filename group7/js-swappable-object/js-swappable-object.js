@@ -3,6 +3,7 @@ export function swappableObject(obj) {
 
     // handler intercepts attempts at accessing properties (get)
     const handler = {
+        // get method inside handler object
         get(obj, prop) {
             // look for matches in values
             for (const [k, v] of Object.entries(obj)) {

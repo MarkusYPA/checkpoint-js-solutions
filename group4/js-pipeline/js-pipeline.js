@@ -9,7 +9,8 @@ export function pipeline(initialValue, functions) {
             input: initialValue,
             output: f(initialValue),
         })
-        initialValue = f(initialValue);
+        //initialValue = f(initialValue);
+        initialValue = steps[steps.length-1].output;
     });
 
     return {

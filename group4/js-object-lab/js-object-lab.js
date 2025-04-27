@@ -1,12 +1,11 @@
 
 export function mergeAndTransform(objects, transforms) {
-
-    // let because transforms create new objects in its place
-    let nuObj = {};
+    
+    let nuObj = {}; // let because transforms create new objects in its place
     let news = 0;
     let overs = 0;
 
-    // Tests assume keys are added to the first object > disregard these from new keys count
+    // Tests assume keys are added to the first object > disregard these from new keys count with 'offset'
     const offset = Object.keys(objects[0]).length;
 
     objects.forEach(o => {
@@ -20,6 +19,7 @@ export function mergeAndTransform(objects, transforms) {
         }
     });
 
+    // very simple to apply all transformations
     transforms.forEach((t) => nuObj = t(nuObj))
 
     const res = {
@@ -29,7 +29,7 @@ export function mergeAndTransform(objects, transforms) {
         keysOverwritten: overs
     };
 
-    //console.log(res);
-
     return res
 }
+
+// remember: check if key existes with if (nuObj[key])

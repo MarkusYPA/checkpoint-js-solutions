@@ -1,12 +1,14 @@
 export function isPerfectNum(n) {
-    // start with 1 on the array, deals with 0 and negatives
-    const divisors = [1];
+    if (n < 1) return false;
 
-    // go through all numbers from 2 to n
-    for (let div = 2; div <= n; div++) {
-        if (n % div == 0) divisors.push(div);
+    let sum = 0;
+
+    // all numbers from 1 to n-1
+    for (let div = 1; div < n; div++) {
+        if (n % div == 0) {
+            sum += div;
+        }
     }
-    const sum = divisors.reduce((acc, v) => acc += v);
 
-    return sum - n === n;
+    return sum === n;
 }

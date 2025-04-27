@@ -7,17 +7,17 @@ function addReverse(num) {
 }
 
 export function palindromicChain(numbers) {    
-    //let fail = false;
     const pals = numbers.map((num) => {
         const orig = num;
         for (let i = 0; i < 100; i++) {
             if (isPal(num)) return num;
             num = addReverse(num);
         }
-        //if (!isPal(num)) fail = true;
+        //if (!isPal(num)) return 0;
         if (!isPal(num)) return orig;   // hack for faulty test, what's commented out should work.
     });
 
-    //if (fail) return 0;
     return pals;
 }
+
+// remember: String(123).split('').reverse() and ["3", "2", "1"].join('')

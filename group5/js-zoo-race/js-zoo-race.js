@@ -1,5 +1,8 @@
 
 // both pass tests without async
+
+// Returns a *Promise* that:
+// - Resolves with the `name` of the animal after it completes the race
 export function animal(
     name,
     maxSpeed,
@@ -21,6 +24,7 @@ export function animal(
     return new Promise((res) => setTimeout(() => res(name), time))     // arrow function inside timeout
 }
 
+// Returns a *Promise* that resolves with the value of the first animal promise to resolve.
 export function zooRace(animals) {
     return Promise.race(animals);
 }

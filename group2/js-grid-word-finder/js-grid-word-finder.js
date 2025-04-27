@@ -27,6 +27,5 @@ export function gridWordsFinder(grid, words) {
         }
     });
 
-
     return founds
 }

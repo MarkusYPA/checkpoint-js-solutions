@@ -15,17 +15,13 @@ export function flattenAndMap(obj, mapper) {
 
       } else {
         //originalKeysCount++;
-
-        let mappedValue;
+        
         if (Array.isArray(value)) {
           // Map each element in the array
-          mappedValue = value.map(mapper);
+          flattened[newPath] = value.map(mapper);
         } else {
-          mappedValue = mapper(value);
+          flattened[newPath] = mapper(value);
         }
-
-        flattened[newPath] = mappedValue;
-        //transformedKeysCount++;
       }
     }
 

@@ -25,3 +25,5 @@ export async function examGrader(timeout, exercises) {
 
   return totalGrade;
 }
+
+// remember: Date.now()

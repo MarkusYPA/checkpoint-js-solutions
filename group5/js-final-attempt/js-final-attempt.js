@@ -13,14 +13,14 @@ export function FinalAttempt(callback, count) {
 
         // no recursion: just keep trying with looping
         while (tries < count) {
+            tries++;
             try {
                 return await callback(...args);
             } catch (err) {
-                tries++;
                 if (tries === count) {
                     return "Final Attempt Fail";
                 }
             }
-        }s
+        }
     }
 }
